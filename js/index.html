@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+      }
+
+      .header {
+        text-align: center;
+      }
+    </style>
+    <script src="./jsIterative.js"></script>
+    <script src="./jsFunctional.js"></script>
+    <script>
+      function runFizzBuzzes() {
+        const n = parseInt(document.getElementById("n").value)
+        const fizz = (i) => (i % 3 === 0) ? "Fizz" : ""
+        const buzz = (i) => (i % 5 === 0) ? "Buzz" : ""
+        const fizzbuzz = (i) => fizz(i) + buzz(i)
+        const iOrFizzBuzz = (s, i) => s == "" ? i : s
+        
+        document.getElementById("fizzbuzzIterative").innerHTML = fizzbuzzIterative(n)
+        document.getElementById("fizzbuzzFunctional").innerHTML = fizzbuzzFunctional(n)
+      }
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <h3>Enter a Positive Number</h3>
+      <input id="n" type="number" min="1" value="20">
+      <input type="button" value="Enter" onclick="runFizzBuzzes()">
+    </div>
+    <br>
+    <h4>Fizz Buzz Iterative:</h4>
+      <span id="fizzbuzzIterative"></span>
+    <br>
+    <br>
+    <h4>Fizz Buzz Functional:</h4>
+      <span id="fizzbuzzFunctional"></span>
+    <br>
+  </body>
+</html>
